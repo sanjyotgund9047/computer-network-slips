@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About myCity</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            color: blue;
+            text-align: center;
+        }
+
+        .landmark {
+            margin: 10px 0;
+            font-size: 18px;
+        }
+
+        #college {
+            color: red;
+            font-style: italic;
+            font-weight: bold;
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+            50% {
+                opacity: 0;
+            }
+        }
+
+        #scrollingText {
+            overflow: hidden;
+            white-space: nowrap;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>About myCity</h1>
+
+    <p id="scrollingText">Welcome to myCity - A place with diverse landmarks!</p>
+
+    <div class="landmark">Landmark 1: <span style="color: green; font-style: oblique;">Green Park</span></div>
+    <div class="landmark">Landmark 2: <span style="color: purple; font-weight: bold;">Purple Tower</span></div>
+    <div class="landmark">Landmark 3: <span style="color: orange; font-family: 'Courier New', monospace;">Orange Plaza</span></div>
+    <div class="landmark" id="college">Landmark 4 (Blinking): My College - XYZ College</div>
+
+</body>
+</html>

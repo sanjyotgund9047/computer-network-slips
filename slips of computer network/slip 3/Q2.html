@@ -1,0 +1,60 @@
+<!-- Write a JavaScript program to display a Multiplication table in tabular format using
+function.  -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiplication Table</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 50%;
+            margin: 20px auto;
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        function generateMultiplicationTable() {
+            // Get the reference to the table element
+            var table = document.createElement("table");
+
+            // Create a header row
+            var headerRow = table.insertRow(0);
+            var headerCell = headerRow.insertCell(0);
+            headerCell.innerHTML = "<strong>Multiplier</strong>";
+
+            for (var i = 1; i <= 10; i++) {
+                headerCell = headerRow.insertCell(i);
+                headerCell.innerHTML = "<strong>" + i + "</strong>";
+            }
+
+            // Create the multiplication table
+            for (var i = 1; i <= 10; i++) {
+                var row = table.insertRow(i);
+                var cell = row.insertCell(0);
+                cell.innerHTML = "<strong>" + i + "</strong>";
+
+                for (var j = 1; j <= 10; j++) {
+                    cell = row.insertCell(j);
+                    cell.innerHTML = i * j;
+                }
+            }
+
+            // Append the table to the body
+            document.body.appendChild(table);
+        }
+
+        // Call the function to generate and display the multiplication table
+        generateMultiplicationTable();
+    </script>
+</body>
+</html>

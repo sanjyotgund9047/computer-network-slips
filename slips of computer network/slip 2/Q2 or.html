@@ -1,0 +1,60 @@
+<!--. Write a JavaScript code to calculate maximum, minimum, sum and average of numbers
+ in an array.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Operations</title>
+    <script>
+        function calculateArrayStats(numbers) {
+            if (numbers.length === 0) {
+                return {
+                    max: null,
+                    min: null,
+                    sum: 0,
+                    average: null
+                };
+            }
+
+            // Initialize variables
+            let max = numbers[0];
+            let min = numbers[0];
+            let sum = numbers[0];
+
+            // Find max, min, and calculate sum
+            for (let i = 1; i < numbers.length; i++) {
+                sum += numbers[i];
+                if (numbers[i] > max) {
+                    max = numbers[i];
+                }
+                if (numbers[i] < min) {
+                    min = numbers[i];
+                }
+            }
+
+            // Calculate average
+            const average = sum / numbers.length;
+
+            return {
+                max: max,
+                min: min,
+                sum: sum,
+                average: average
+            };
+        }
+
+        // Example usage
+        const numberArray = [4, 7, 2, 10, 5];
+        const arrayStats = calculateArrayStats(numberArray);
+
+        console.log("Maximum:", arrayStats.max);
+        console.log("Minimum:", arrayStats.min);
+        console.log("Sum:", arrayStats.sum);
+        console.log("Average:", arrayStats.average);
+    </script>
+</head>
+<body>
+    <!-- This is just a template; the calculations are done in the script above -->
+</body>
+</html>

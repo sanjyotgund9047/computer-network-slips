@@ -1,0 +1,60 @@
+<!-- Write a JavaScript program to accept a number from user and display that number in
+ words (e.g. 226 Two Two Six)  -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number to Words</title>
+</head>
+<body>
+    <script>
+        function numberToWords() {
+            // Get user input for the number
+            var userInput = prompt("Enter a number:");
+
+            // Validate if the input is a number
+            if (!isNaN(userInput)) {
+                var numberInWords = convertToWords(userInput);
+                alert("Number in words: " + numberInWords);
+            } else {
+                alert("Invalid input. Please enter a valid number.");
+            }
+        }
+
+        function convertToWords(number) {
+            var singleDigits = ["", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine"];
+            var twoDigits = ["", "", "Twenty", "Thirty", "Forty", "Fifty", "Sixty", "Seventy", "Eighty", "Ninety"];
+            var teens = ["Ten", "Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen", "Sixteen", "Seventeen", "Eighteen", "Nineteen"];
+
+            var numberArray = number.toString().split("").map(Number);
+
+            var result = "";
+
+            if (numberArray.length === 3) {
+                result += singleDigits[numberArray[0]] + " Hundred ";
+                numberArray.shift();
+            }
+
+            if (numberArray.length === 2) {
+                if (numberArray[0] === 1) {
+                    result += teens[numberArray[1]] + " ";
+                    numberArray = [];
+                } else {
+                    result += twoDigits[numberArray[0]] + " ";
+                    numberArray.shift();
+                }
+            }
+
+            if (numberArray.length === 1) {
+                result += singleDigits[numberArray[0]];
+            }
+
+            return result.trim();
+        }
+
+        // Call the function to get user input and display the number in words
+        numberToWords();
+    </script>
+</body>
+</html>

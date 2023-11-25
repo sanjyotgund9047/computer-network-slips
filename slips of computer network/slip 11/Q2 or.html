@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Operations</title>
+    <script>
+        function validateInput(input) {
+            // Check if the input is a valid number
+            return !isNaN(input);
+        }
+
+        function findSquareRoot() {
+            var userInput = prompt("Enter a number:");
+            if (validateInput(userInput)) {
+                var number = parseFloat(userInput);
+                var result = Math.sqrt(number);
+                alert("Square Root: " + result.toFixed(2));
+            } else {
+                alert("Invalid input. Please enter a valid number.");
+            }
+        }
+
+        function findPower() {
+            var base = prompt("Enter the base:");
+            var exponent = prompt("Enter the exponent:");
+            
+            if (validateInput(base) && validateInput(exponent)) {
+                var result = Math.pow(parseFloat(base), parseFloat(exponent));
+                alert("Power: " + result.toFixed(2));
+            } else {
+                alert("Invalid input. Please enter valid numbers for base and exponent.");
+            }
+        }
+
+        function findAbsoluteValue() {
+            var userInput = prompt("Enter a number:");
+            if (validateInput(userInput)) {
+                var number = parseFloat(userInput);
+                var result = Math.abs(number);
+                alert("Absolute Value: " + result.toFixed(2));
+            } else {
+                alert("Invalid input. Please enter a valid number.");
+            }
+        }
+    </script>
+</head>
+<body>
+
+    <h1>Number Operations</h1>
+
+    <button onclick="findSquareRoot()">Find Square Root</button>
+    <button onclick="findPower()">Find Power</button>
+    <button onclick="findAbsoluteValue()">Find Absolute Value</button>
+
+</body>
+</html>

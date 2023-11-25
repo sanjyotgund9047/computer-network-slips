@@ -1,0 +1,37 @@
+<!-- Write a JavaScript program to print factorial of a given number. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Factorial Calculator</title>
+</head>
+<body>
+    <script>
+        function calculateFactorial(number) {
+            if (number < 0) {
+                return "Factorial is not defined for negative numbers.";
+            } else if (number === 0 || number === 1) {
+                return 1;
+            } else {
+                let factorial = 1;
+                for (let i = 2; i <= number; i++) {
+                    factorial *= i;
+                }
+                return factorial;
+            }
+        }
+
+        // Example usage:
+        let userInput = prompt("Enter a number to calculate its factorial:");
+        let number = parseInt(userInput);
+
+        if (!isNaN(number)) {
+            let result = calculateFactorial(number);
+            alert(`Factorial of ${number} is: ${result}`);
+        } else {
+            alert("Invalid input. Please enter a valid number.");
+        }
+    </script>
+</body>
+</html>

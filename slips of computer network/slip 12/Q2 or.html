@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Factor Array Program</title>
+    <script>
+        function getFactors(number) {
+            var factors = [];
+            
+            for (var i = 1; i <= number; i++) {
+                if (number % i === 0) {
+                    factors.push(i);
+                }
+            }
+
+            return factors;
+        }
+
+        function displayFactors() {
+            var userNumber = prompt("Enter a number:");
+            
+            // Parse the input as an integer
+            var number = parseInt(userNumber);
+
+            if (!isNaN(number)) {
+                var factorsArray = getFactors(number);
+
+                // Display the factors array
+                alert("Factors of " + number + ": " + factorsArray.join(', '));
+            } else {
+                alert("Invalid input. Please enter a valid number.");
+            }
+        }
+    </script>
+</head>
+<body>
+
+    <h1>Factor Array Program</h1>
+
+    <button onclick="displayFactors()">Get Factors</button>
+
+</body>
+</html>

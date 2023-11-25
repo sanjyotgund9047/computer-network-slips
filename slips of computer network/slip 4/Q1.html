@@ -1,0 +1,66 @@
+<!-- Create HTML page with following specifications [10 Marks]
+a) Title should be about myCity
+b) Place your City name at the top of the page in large text and in blue color
+c) Add names of landmarks in your city each in a different color, style and typefaced.
+d) One of the landmark, your college name should be blinking.
+e) Add scrolling text with a message of your choice.  -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About myCity</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+        }
+
+        h1 {
+            color: blue;
+            font-size: 2em;
+        }
+        
+
+        
+        .landmark {
+            font-style: italic;
+            font-weight: bold;
+            margin: 10px;
+        }
+
+        #college {
+            color: red;
+            font-weight: bold;
+            font-style: italic;
+            animation: blink 1s infinite;
+        }
+
+        #scrolling-text {
+            white-space: nowrap;
+            overflow: hidden;
+            border: 1px solid #000;
+        }
+
+        @keyframes blink {
+            50% {
+                opacity: 0;
+            }
+        }
+        
+    </style>
+</head>
+<body>
+    <h1>myCity</h1>
+
+    <div1 class="landmark">Landmark 1</div1>
+    <div2 class="landmark" style="color: green;">Landmark 2</div2>
+    <div3 class="landmark" style="color: purple;">Landmark 3</div3>
+    <div4 class="landmark" id="college">Bharatiya Jain Sanghatana</div4>
+    <div5 class="landmark" style="color: orange;">Landmark 4</div5>
+
+    <div id="scrolling-text">
+        <marquee behavior="scroll" direction="left">This is a scrolling text with a message of your choice.</marquee>
+    </div>
+</body>
+</html>

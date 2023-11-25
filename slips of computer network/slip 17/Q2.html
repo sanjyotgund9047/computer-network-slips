@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Factors Program</title>
+    <script>
+        function findFactors() {
+            var userInput = prompt("Enter a number:");
+            
+            // Parse the input as an integer
+            var number = parseInt(userInput);
+
+            if (!isNaN(number)) {
+                var factors = calculateFactors(number);
+
+                alert("Factors of " + number + ": " + factors.join(', '));
+            } else {
+                alert("Invalid input. Please enter a valid number.");
+            }
+        }
+
+        function calculateFactors(num) {
+            var factors = [];
+
+            // Factors are always less than or equal to half of the number
+            for (var i = 1; i <= Math.floor(num / 2); i++) {
+                if (num % i === 0) {
+                    factors.push(i);
+                }
+            }
+
+            // Include the number itself as a factor
+            factors.push(num);
+
+            return factors;
+        }
+    </script>
+</head>
+<body>
+
+    <h1>Factors Program</h1>
+
+    <button onclick="findFactors()">Find Factors</button>
+
+</body>
+</html>

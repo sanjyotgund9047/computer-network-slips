@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Input Validation</title>
+    <script>
+        function validateForm() {
+            var name = document.getElementById("name").value;
+            var mobileNumber = document.getElementById("mobileNumber").value;
+
+            // Check for null values
+            if (name === "" || mobileNumber === "") {
+                alert("All fields must be filled out");
+                return false;
+            }
+
+            // Check if name contains only alphabets
+            var nameRegex = /^[a-zA-Z]+$/;
+            if (!nameRegex.test(name)) {
+                alert("Name should contain only alphabets");
+                return false;
+            }
+
+            // Check if mobile number is 10 digits long
+            if (mobileNumber.length !== 10 || isNaN(mobileNumber)) {
+                alert("Mobile number should be 10 digits long and contain only numbers");
+                return false;
+            }
+
+            // Validation successful
+            alert("Validation successful!");
+            return true;
+        }
+    </script>
+</head>
+<body>
+
+    <h1>User Input Validation</h1>
+
+    <form onsubmit="return validateForm()">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <br>
+        <label for="mobileNumber">Mobile Number:</label>
+        <input type="text" id="mobileNumber" name="mobileNumber" required>
+        <br>
+        <input type="submit" value="Submit">
+    </form>
+
+</body>
+</html>

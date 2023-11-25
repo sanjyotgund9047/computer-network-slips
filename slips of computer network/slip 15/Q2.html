@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reverse Number Program</title>
+    <script>
+        function reverseNumber() {
+            var userInput = prompt("Enter a number:");
+            
+            // Parse the input as an integer
+            var number = parseInt(userInput);
+
+            if (!isNaN(number)) {
+                var reversedNumber = reverseDigits(number);
+
+                alert("Reverse of " + number + " is: " + reversedNumber);
+            } else {
+                alert("Invalid input. Please enter a valid number.");
+            }
+        }
+
+        function reverseDigits(num) {
+            // Convert number to string, split digits, reverse array, and join back to string
+            return parseInt(num.toString().split('').reverse().join(''));
+        }
+    </script>
+</head>
+<body>
+
+    <h1>Reverse Number Program</h1>
+
+    <button onclick="reverseNumber()">Reverse Number</button>
+
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!-- this is a colored text boxes for addign to each other -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Four Connected Textbox-like Containers</title>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f0f0; /* Background color for the entire page */
+        }
+
+        .container {
+            width: 200px;
+            height: 80px;
+            padding: 10px;
+            text-align: center;
+            font-size: 16px;
+            margin: 0; /* Remove margin */
+            border: 1px solid #ccc; /* Border color */
+            border-radius: 5px; /* Rounded corners */
+            background-color: white; /* Background color for the container */
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Box shadow for a subtle lift */
+        }
+
+        .container:nth-child(1) { border-color: black; }
+        .container:nth-child(2) { border-color: red; }
+        .container:nth-child(3) { border-color: green; }
+        .container:nth-child(4) { border-color: black; }
+
+    </style>
+</head>
+<body>
+    <div class="container">this is a first text</div>
+    <div class="container">This is a red box</div>
+    <div class="container">This is a green box</div>
+    <div class="container">this is a last text</div>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Factorial Program</title>
+    <script>
+        function calculateFactorial() {
+            var userInput = prompt("Enter a number:");
+            
+            // Parse the input as an integer
+            var number = parseInt(userInput);
+
+            if (!isNaN(number)) {
+                var factorial = calculateRecursiveFactorial(number);
+
+                alert("Factorial of " + number + " is: " + factorial);
+            } else {
+                alert("Invalid input. Please enter a valid number.");
+            }
+        }
+
+        function calculateRecursiveFactorial(num) {
+            if (num === 0 || num === 1) {
+                return 1;
+            } else {
+                return num * calculateRecursiveFactorial(num - 1);
+            }
+        }
+    </script>
+</head>
+<body>
+
+    <h1>Factorial Program</h1>
+
+    <button onclick="calculateFactorial()">Calculate Factorial</button>
+
+</body>
+</html>
